@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <Suspense fallback={null}>
-          <Canvas dpr={[1, 2]} shadows camera={{ position: [0, 0, -100], fov: 30 }}>
+          <Canvas dpr={[1, 2]} shadows camera={{ position: [0, 0, 10], fov: 30 }}>
             <Scene />
           </Canvas>
 
