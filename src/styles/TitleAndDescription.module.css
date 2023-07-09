@@ -1,0 +1,40 @@
+.title{
+  font-family: 'Monsieur La Doulaise';
+  position: absolute;
+  font-size: 10rem;
+}
+
+.draculaTitle{
+  top: 5vh;
+  left: 15.5rem;
+}
+
+.description{
+  position: absolute;
+  fontSize: 1.25rem;
+  width: 450px;
+}
+.draculaDescription{
+  top:40vh;
+  left:15.5rem;
+}
+.cthulhuTitle{
+  top: 110vh;
+  left: 65vw;
+  fontSize: 10rem;
+}
+
+.cthulhuDescription{
+  top: 150vh;
+  left: 65vw;
+}
+
+.mushroomTitle{
+  top: 195vh;
+  left: 3.8vw;
+}
+.mushroomDescription{
+  top: 231.5vh;
+  left: 9vw;
+}
+

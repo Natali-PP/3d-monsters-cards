@@ -1,5 +1,5 @@
-import { CameraControls, Environment, MeshPortalMaterial, OrbitControls, RoundedBox, Scroll, ScrollControls, useScroll, useTexture } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { CameraControls, Environment, Scroll, ScrollControls } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from 'three';
 import { Mushroom } from "./models/Mushroom";
@@ -8,21 +8,8 @@ import { Bat } from "./models/Bat";
 import ModelWithMapEnv from "./ModelWithMapEnv";
 import CardPortal from "./CardPortal";
 import ScrollingCards from "./ScrollingCards";
-//const ScrollingCards = ({ children, ...props }) => {
-//  const scrollRef = useRef();
-//  const data = useScroll();
-//  useFrame(() => {
-//    scrollRef.current.children[0].position.z = 1 + data.range(0, 1 / 3) / 3
-//    scrollRef.current.children[0].position.x = 1 + data.range(0, 1 / 3) / 3
-//    scrollRef.current.children[1].position.z = 1 + data.range(0, 1 / 3) / 3
-//    scrollRef.current.children[2].position.z = 1 + data.range(1.15 / 3, 1 / 3) / 3
-//  })
-//  return (
-//    <group ref={scrollRef}>
-//      {children}
-//    </group>
-//  )
-//}
+import { motion } from "framer-motion";
+import TitleAndDescription from "./TitleAndDescription";
 
 const Scene = () => {
   const [active, setActive] = useState(false);
@@ -61,6 +48,8 @@ const Scene = () => {
     }
   }, [active])
 
+
+
   return (
     <>
       <CameraControls ref={cameraControlsRef} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 6} enabled={enableCamera} />
@@ -86,7 +75,7 @@ const Scene = () => {
               setActive={setActive}
               name='cthulu'>
               <ModelWithMapEnv
-                texture='textures/surreal_cthulhu.jpg'
+                texture='textures/fantasy_cthulhu_scary_cute.jpg'
               >
                 <Cthulhu scale={0.5} position={[0, -0.4, 0]} />
               </ModelWithMapEnv>
@@ -105,6 +94,33 @@ const Scene = () => {
               </ModelWithMapEnv>
             </CardPortal>
           </ScrollingCards>
+        </Scroll>
+        <Scroll html>
+          <TitleAndDescription
+            active={active}
+            title="Drácula"
+            description="Whats more scary than his immortal existence?
+            His insatiable thirst for blood, his charisma, supernatural powers
+            - a relentless predator, immortal and insatiable"
+            styleTitle="draculaTitle"
+            styleDescription="draculaDescription"
+          />
+          <TitleAndDescription
+            active={active}
+            title="Cthulhu"
+            description="“That is not dead which can eternal lie,
+            And with strange aeons even death may die”"
+            styleTitle="cthulhuTitle"
+            styleDescription="cthulhuDescription"
+          />
+          <TitleAndDescription
+            active={active}
+            title="Mushroom"
+            description="An eerie environment where the line between beauty and danger becomes blurred,
+            as if I had stepped into a realm where nature's secrets whispered of danger and the unknown."
+            styleTitle="mushroomTitle"
+            styleDescription="mushroomDescription"
+          />
         </Scroll>
       </ScrollControls>
     </>
