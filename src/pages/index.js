@@ -3,6 +3,7 @@ import styles from '@/styles/Home.module.css'
 import { Suspense } from 'react'
 import Scene from '@/components/Scene'
 import { Canvas } from '@react-three/fiber'
+import { Loader } from '@react-three/drei'
 
 export default function Home() {
   return (
@@ -14,15 +15,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Pinyon+Script&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Bacasime+Antique&display=swap" rel="stylesheet" />
       </Head>
       <main className={`${styles.main}`}>
-        <Suspense fallback={<h1>LOADING...</h1>}>
+        <Suspense fallback={null}>
           <Canvas dpr={[1, 2]} shadows camera={{ position: [0, 0, 10], fov: 30 }} >
             <Scene />
           </Canvas>
-
         </Suspense >
+        <Loader />
       </main>
     </>
   )
