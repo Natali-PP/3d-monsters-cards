@@ -1,15 +1,18 @@
-import { CameraControls, Environment, Scroll, ScrollControls } from "@react-three/drei";
+import { CameraControls, Environment, Html, Scroll, ScrollControls } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from 'three';
 import { Mushroom } from "./models/Mushroom";
 import { Cthulhu } from "./models/Cthulu";
 import { Bat } from "./models/Bat";
+import { Alien } from "./models/Alien"
 import ModelWithMapEnv from "./ModelWithMapEnv";
 import CardPortal from "./CardPortal";
 import ScrollingCards from "./ScrollingCards";
 import { motion } from "framer-motion";
 import TitleAndDescription from "./TitleAndDescription";
+import styles from '../styles/Scene.module.css';
+import { Demon } from "./models/Demon";
 
 const Scene = () => {
   const [active, setActive] = useState(false);
@@ -48,24 +51,22 @@ const Scene = () => {
     }
   }, [active])
 
-
-
   return (
     <>
       <CameraControls ref={cameraControlsRef} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 6} enabled={enableCamera} />
       <Environment preset="sunset" />
-      <ScrollControls damping={1} pages={3}  >
+      <ScrollControls damping={0.5} pages={5} >
         <Scroll>
           <ScrollingCards>
             <CardPortal
-              name="bat"
+              name="alien"
               active={active}
               setActive={setActive}
             >
               <ModelWithMapEnv
-                texture='textures/holographic_transilvania_vampire_house_with_bats.jpg'
+                texture='textures/fantasy_destroyed_and_scary_underworld_with_blood_.jpg'
               >
-                <Bat scale={0.5} position={[0, -0.4, 0]} />
+                <Demon scale={0.5} position={[0, -0.4, 0]} />
               </ModelWithMapEnv>
             </CardPortal>
 
@@ -82,8 +83,20 @@ const Scene = () => {
             </CardPortal>
 
             <CardPortal
-              name='mushroom'
+              name='demon'
               position={[0, -10, 0]}
+              active={active}
+              setActive={setActive}
+            >
+              <ModelWithMapEnv
+                texture='textures/tech_noir__cyberpunk_a_scary_alien_world.jpg'
+              >
+                <Alien scale={0.5} position={[0, -0.4, 0]} />
+              </ModelWithMapEnv>
+            </CardPortal>
+            <CardPortal
+              name='mushroom'
+              position={[0, -15, 0]}
               active={active}
               setActive={setActive}
             >
@@ -93,33 +106,67 @@ const Scene = () => {
                 <Mushroom scale={0.5} position={[0, -0.4, 0]} />
               </ModelWithMapEnv>
             </CardPortal>
+            <CardPortal
+              name='bat'
+              position={[0, -20, 0]}
+              active={active}
+              setActive={setActive}
+            >
+              <ModelWithMapEnv
+                texture='textures/holographic_transilvania_vampire_house_with_bats.jpg'
+              >
+                <Bat scale={0.5} position={[0, -0.4, 0]} />
+              </ModelWithMapEnv>
+            </CardPortal>
           </ScrollingCards>
         </Scroll>
         <Scroll html>
+          <h1
+            style={{ display: active ? "none" : "inherit" }}
+            className={styles.title}
+          >Do you dare to enter into the unknown? Double click on your companion and explore a new world</h1>
           <TitleAndDescription
             active={active}
-            title="Drácula"
-            description="Whats more scary than his immortal existence?
-            His insatiable thirst for blood, his charisma, supernatural powers
-            - a relentless predator, immortal and insatiable"
-            styleTitle="draculaTitle"
-            styleDescription="draculaDescription"
+            title="Demon"
+            description="Tap into our deepest fears and religious beliefs. What's evil, torment or eternal damnation? 
+            This realm evokes a fear of punishment, spiritual darkness, and the possibility of losing one's soul. 
+            Face the uncertainty of what lies beyond death and the dread of facing the consequences of our actions in the afterlife."
+            styleTitle="firstTitle"
+            styleDescription="firstDescription"
           />
           <TitleAndDescription
             active={active}
             title="Cthulhu"
             description="“That is not dead which can eternal lie,
             And with strange aeons even death may die”"
-            styleTitle="cthulhuTitle"
-            styleDescription="cthulhuDescription"
+            styleTitle="secondTitle"
+            styleDescription="secondDescription"
+          />
+          <TitleAndDescription
+            active={active}
+            title="Alien"
+            description="It's unfamiliar appearance and advanced capabilities challenge our understanding of the universe, 
+            triggering feelings of vulnerability and insignificance. Get to know their intentions, the potential for invasion 
+            or abduction, and the unsettling realization that we may not be alone in the vastness of space"
+            styleTitle="thirdTitle"
+            styleDescription="thirdDescription"
           />
           <TitleAndDescription
             active={active}
             title="Mushroom"
             description="An eerie environment where the line between beauty and danger becomes blurred,
-            as if I had stepped into a realm where nature's secrets whispered of danger and the unknown."
-            styleTitle="mushroomTitle"
-            styleDescription="mushroomDescription"
+            as if you had stepped into a realm where nature's secrets whispered of danger and the unknown."
+            styleTitle="fourthTitle"
+            styleDescription="fourthDescription"
+          />
+          <TitleAndDescription
+            active={active}
+            title="Drácula"
+            description="Whats more scary than his immortal existence?
+            His insatiable thirst for blood, his charisma, supernatural powers
+            - a relentless predator, immortal and insatiable"
+            styleTitle="fifthTitle"
+            styleDescription="fifthDescription"
           />
         </Scroll>
       </ScrollControls>
