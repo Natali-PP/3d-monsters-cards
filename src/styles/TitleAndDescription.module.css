@@ -4,37 +4,53 @@
   font-size: 10rem;
 }
 
-.draculaTitle{
-  top: 5vh;
-  left: 15.5rem;
-}
 
 .description{
   position: absolute;
-  fontSize: 1.25rem;
+  font-size: 2.25rem;
   width: 450px;
+  font-family: 'Bacasime Antique';
 }
-.draculaDescription{
+.firstTitle{
+  top: 5vh;
+  left: 15.5rem;
+}
+.firstDescription{
   top:40vh;
   left:15.5rem;
 }
-.cthulhuTitle{
+.secondTitle{
   top: 110vh;
   left: 65vw;
-  fontSize: 10rem;
 }
 
-.cthulhuDescription{
+.secondDescription{
   top: 150vh;
   left: 65vw;
 }
 
-.mushroomTitle{
+.thirdTitle{
   top: 195vh;
   left: 3.8vw;
 }
-.mushroomDescription{
+.thirdDescription{
   top: 231.5vh;
+  left: 9vw;
+}
+.fourthTitle{
+  top: 295vh;
+  left: 3.8vw;
+}
+.fourthDescription{
+  top: 301.5vh;
+  left: 9vw;
+}
+.fifthTitle{
+  top: 395vh;
+  left: 3.8vw;
+}
+.fifthDescription{
+  top: 391.5vh;
   left: 9vw;
 }
 
