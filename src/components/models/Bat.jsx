@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.2.5 public/models/Bat.gltf -o src/components/models/Bat.j
 */
 
 import React, { useEffect, useRef, useState } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useGLTF, useAnimations, useCursor } from '@react-three/drei'
 
 export function Bat(props) {
 
@@ -19,12 +19,13 @@ export function Bat(props) {
   }, [])
 
   useEffect(() => {
-    console.log('hovered', hovered)
     if (hovered) {
       actions['Bite_Front'].reset().fadeIn(0.5).play();
       return () => actions['Bite_Front'].fadeOut(0.5)
     }
   }, [hovered])
+
+  useCursor(hovered);
   return (
     <group ref={group} {...props} dispose={null} onPointerOver={() => setHovered(true)} onPointerLeave={() => setHovered(false)}>
       <group name="Scene">

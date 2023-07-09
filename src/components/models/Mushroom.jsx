@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.2.5 public/models/Mushroom.gltf -o src/components/models/
 */
 
 import React, { useEffect, useRef, useState } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useGLTF, useAnimations, useCursor } from '@react-three/drei'
 
 export function Mushroom(props) {
   const group = useRef()
@@ -12,15 +12,14 @@ export function Mushroom(props) {
   const { actions } = useAnimations(animations, group)
 
   const [hovered, setHovered] = useState(false)
-  console.log(actions)
 
+  useCursor(hovered);
   useEffect(() => {
     actions['Idle'].reset().fadeIn(0.5).play();
     return () => actions['Idle'].fadeOut(0.5)
   }, [])
 
   useEffect(() => {
-    console.log('hovered', hovered)
     if (hovered) {
       actions['Dance'].reset().fadeIn(0.5).play();
       return () => actions['Dance'].fadeOut(0.5)

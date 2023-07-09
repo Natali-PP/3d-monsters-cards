@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.2.5 public/models/Cthulhu.gltf -o src/components/models/C
 */
 
 import React, { useEffect, useRef, useState } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useGLTF, useAnimations, useCursor } from '@react-three/drei'
 
 export function Cthulhu(props) {
   const group = useRef()
@@ -12,13 +12,13 @@ export function Cthulhu(props) {
   const { actions } = useAnimations(animations, group)
   const [hovered, setHovered] = useState(false)
 
+  useCursor(hovered);
   useEffect(() => {
     actions['Flying'].reset().fadeIn(0.5).play();
     return () => actions['Flying'].fadeOut(0.5)
   }, [])
 
   useEffect(() => {
-    console.log('hovered', hovered)
     if (hovered) {
       actions['Bite_Front'].reset().fadeIn(0.5).play();
       return () => actions['Bite_Front'].fadeOut(0.5)
