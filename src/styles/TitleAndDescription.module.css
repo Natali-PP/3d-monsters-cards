@@ -1,56 +1,58 @@
 .title{
-  font-family: 'Monsieur La Doulaise';
   position: absolute;
-  font-size: 10rem;
+  font-size: 6rem;
+  font-weight:800;
+  text-transform:uppercase;
+  text-shadow: 3px 3px 2px #2a2017;
 }
-
 
 .description{
   position: absolute;
-  font-size: 2.25rem;
+  font-size: 1.25rem;
   width: 450px;
-  font-family: 'Bacasime Antique';
+  font-weight:400;
 }
 .firstTitle{
-  top: 5vh;
-  left: 15.5rem;
+  top: 20vh;
+  left: 21.5rem;
 }
 .firstDescription{
   top:40vh;
-  left:15.5rem;
+  left: 21.5rem;
 }
 .secondTitle{
-  top: 110vh;
-  left: 65vw;
+  top: 115vh;
+  left: 55vw;
 }
 
 .secondDescription{
-  top: 150vh;
-  left: 65vw;
+  top: 135vh;
+  left: 55vw;
 }
 
 .thirdTitle{
-  top: 195vh;
-  left: 3.8vw;
+  top: 205vh;
+  left: 25.5rem;
 }
 .thirdDescription{
-  top: 231.5vh;
-  left: 9vw;
+  top: 225vh;
+  left: 25.5rem;
 }
 .fourthTitle{
-  top: 295vh;
-  left: 3.8vw;
+  top: 301vh;
+  left: 55vw;
 }
 .fourthDescription{
-  top: 301.5vh;
-  left: 9vw;
+  top: 322vh;
+  left: 55vw;
 }
 .fifthTitle{
   top: 395vh;
-  left: 3.8vw;
+  left: 25.5rem;
 }
 .fifthDescription{
-  top: 391.5vh;
-  left: 9vw;
+  top: 415vh;
+  left: 25.5rem;
 }
+
 
