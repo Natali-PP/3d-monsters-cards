@@ -9,7 +9,7 @@ import { Alien } from "./models/Alien"
 import ModelWithMapEnv from "./ModelWithMapEnv";
 import CardPortal from "./CardPortal";
 import ScrollingCards from "./ScrollingCards";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import TitleAndDescription from "./TitleAndDescription";
 import styles from '../styles/Scene.module.css';
 import { Demon } from "./models/Demon";
@@ -53,18 +53,19 @@ const Scene = () => {
 
   return (
     <>
-      <CameraControls ref={cameraControlsRef} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 6} enabled={enableCamera} />
+      <CameraControls ref={cameraControlsRef}
+        enabled={enableCamera} />
       <Environment preset="sunset" />
-      <ScrollControls damping={0.5} pages={5} >
+      <ScrollControls damping={0.5} pages={6} >
         <Scroll>
           <ScrollingCards>
             <CardPortal
-              name="alien"
+              name="demon"
               active={active}
               setActive={setActive}
             >
               <ModelWithMapEnv
-                texture='textures/fantasy_destroyed_and_scary_underworld_with_blood_.jpg'
+                texture='textures/demon.jpg'
               >
                 <Demon scale={0.5} position={[0, -0.4, 0]} />
               </ModelWithMapEnv>
@@ -76,20 +77,20 @@ const Scene = () => {
               setActive={setActive}
               name='cthulu'>
               <ModelWithMapEnv
-                texture='textures/fantasy_cthulhu_scary_cute.jpg'
+                texture='textures/cthulhu.jpg'
               >
                 <Cthulhu scale={0.5} position={[0, -0.4, 0]} />
               </ModelWithMapEnv>
             </CardPortal>
 
             <CardPortal
-              name='demon'
+              name='alien'
               position={[0, -10, 0]}
               active={active}
               setActive={setActive}
             >
               <ModelWithMapEnv
-                texture='textures/tech_noir__cyberpunk_a_scary_alien_world.jpg'
+                texture='textures/alien.jpg'
               >
                 <Alien scale={0.5} position={[0, -0.4, 0]} />
               </ModelWithMapEnv>
@@ -101,7 +102,7 @@ const Scene = () => {
               setActive={setActive}
             >
               <ModelWithMapEnv
-                texture='textures/surreal_deep_forest.jpg'
+                texture='textures/mushroom2.jpg'
               >
                 <Mushroom scale={0.5} position={[0, -0.4, 0]} />
               </ModelWithMapEnv>
@@ -113,7 +114,7 @@ const Scene = () => {
               setActive={setActive}
             >
               <ModelWithMapEnv
-                texture='textures/holographic_transilvania_vampire_house_with_bats.jpg'
+                texture='textures/dracula.jpg'
               >
                 <Bat scale={0.5} position={[0, -0.4, 0]} />
               </ModelWithMapEnv>
@@ -121,10 +122,6 @@ const Scene = () => {
           </ScrollingCards>
         </Scroll>
         <Scroll html>
-          <h1
-            style={{ display: active ? "none" : "inherit" }}
-            className={styles.title}
-          >Do you dare to enter into the unknown? Double click on your companion and explore a new world</h1>
           <TitleAndDescription
             active={active}
             title="Demon"
