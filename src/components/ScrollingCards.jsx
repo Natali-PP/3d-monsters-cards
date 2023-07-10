@@ -6,9 +6,11 @@ const ScrollingCards = ({ children, ...props }) => {
   const scrollRef = useRef();
   const data = useScroll();
   useFrame(() => {
-    scrollRef.current.children[0].position.z = 1 + data.range(0, 1 / 3) / 3
-    scrollRef.current.children[1].position.z = 1 + data.range(0, 1 / 3) / 3
-    scrollRef.current.children[2].position.z = 1 + data.range(1.15 / 3, 1 / 3) / 3
+    scrollRef.current.children[0].position.x = 1 + data.offset * 3
+    scrollRef.current.children[1].position.x = -2 + data.offset * 3
+    scrollRef.current.children[2].position.x = 2.5 - data.offset * 3
+    scrollRef.current.children[3].position.x = -3.5 + data.offset * 3
+    scrollRef.current.children[4].position.x = 4 - data.offset * 3
   })
   return (
     <group ref={scrollRef}>
