@@ -55,4 +55,59 @@
   left: 25.5rem;
 }
 
+@media screen and (max-width: 480px) {
+
+.title{
+  font-size: 3rem;
+  left: 25vw;
+}
+
+.description{
+  font-size: 0.75rem;
+    width:300px;
+    text-align:center;
+}
+.firstTitle{
+  top: 5vh;
+}
+.firstDescription{
+  top:80vh;
+  left: 15vw;
+}
+.secondTitle{
+  top: 100vh;
+    left:20vw;
+}
+
+.secondDescription{
+  top: 175vh;
+  left: 15vw;
+}
+
+.thirdTitle{
+  top: 190vh;
+  left: 30vw;
+}
+.thirdDescription{
+  top: 265vh;
+  left: 4rem;
+}
+.fourthTitle{
+  top: 285vh;
+  left: 15vw;
+}
+.fourthDescription{
+  top: 358vh;
+  left: 15vw;
+}
+.fifthTitle{
+  top: 380vh;
+  left: 5.5rem;
+}
+.fifthDescription{
+  top: 455vh;
+  left: 3.5rem;
+}
+}
+
 
