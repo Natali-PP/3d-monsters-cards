@@ -1,4 +1,4 @@
-import { CameraControls, Environment, Html, Scroll, ScrollControls } from "@react-three/drei";
+import { CameraControls, Environment, Scroll, ScrollControls } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from 'three';
@@ -9,9 +9,7 @@ import { Alien } from "./models/Alien"
 import ModelWithMapEnv from "./ModelWithMapEnv";
 import CardPortal from "./CardPortal";
 import ScrollingCards from "./ScrollingCards";
-import { color, motion } from "framer-motion";
 import TitleAndDescription from "./TitleAndDescription";
-import styles from '../styles/Scene.module.css';
 import { Demon } from "./models/Demon";
 
 const Scene = () => {

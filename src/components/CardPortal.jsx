@@ -60,7 +60,7 @@ const CardPortal = ({
   })
 
   return (
-    <group {...props}>
+    <group {...props} >
       <RoundedBox
         args={[2, 3, 0.3]}
         radius={0.3}
@@ -73,7 +73,6 @@ const CardPortal = ({
             y: clientY
           })
         }}
-
       >
         <MeshPortalMaterial side={THREE.DoubleSide} ref={portalMaterial}>
           <ambientLight intensity={2.5} />
