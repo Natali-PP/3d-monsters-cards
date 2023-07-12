@@ -17,7 +17,6 @@ const CardPortal = ({
   const centerX = window.innerWidth * 0.5;
   const centerY = window.innerHeight * 0.5;
 
-
   const [active, setActive] = usePortalStore(
     (state) => [state.active, state.setActive]
   )

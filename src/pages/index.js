@@ -7,7 +7,6 @@ import { Loader } from '@react-three/drei'
 import RotationIcon from '@/components/icons/RotationIcon'
 
 export default function Home() {
-
   return (
     <>
       <Head>
@@ -21,7 +20,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main}`}>
         <Suspense fallback={null}>
-          <Canvas dpr={[1, 2]} shadows camera={{ position: [0, 0, 10], fov: 30 }} >
+          <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 10], fov: 30 }} >
             <Scene />
           </Canvas>
           <RotationIcon />
