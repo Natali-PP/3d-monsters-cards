@@ -1,10 +1,13 @@
 import { motion } from "framer-motion"
 import styles from '../styles/TitleAndDescription.module.css'
 import { useRef } from "react"
+import usePortalStore from "@/store/usePortalStore";
 
-const TitleAndDescription = ({ active, title, description, styleTitle, styleDescription }) => {
+const TitleAndDescription = ({ title, description, styleTitle, styleDescription }) => {
   const ref = useRef();
-
+  const [active, setActive] = usePortalStore(
+    (state) => [state.active, state.setActive]
+  )
   const variantsH1 = {
     insidePortal: {
       color: '#000000',
