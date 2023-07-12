@@ -5,6 +5,17 @@ This tropes presented as 3D cards often tap into universal human fears, such as 
 
 ### To enter into the unknown, double click in your companion!
 
+
+
+https://github.com/Natali-PP/3d-monsters-cards/assets/52763331/da1b899b-8200-49a1-8551-45df76051985
+
+
+
+
+
+
+You can also see it deployed [following this link](https://3d-monsters-cards.vercel.app) 
+
 ## Tech
 
 This application uses a number of open source projects to work properly:
