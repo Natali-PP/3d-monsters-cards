@@ -3,7 +3,7 @@
 ### Why do we seek to be scared? Why did we created monsters?
 This tropes presented as 3D cards often tap into universal human fears, such as the fear of the unknown, the fear of death, or the fear of the supernatural. By creating monstrous creatures with exaggerated or grotesque features, we externalize our internal fears, giving them a tangible form.
 
-### To enter into the unknow, double click in yor companion!
+### To enter into the unknown, double click in your companion!
 
 ## Tech
 
@@ -29,7 +29,7 @@ $ git clone https://github.com/Natali-PP/3d-monsters-cards.git
 ```
 2. Once cloned, go to the cloned directory and install the dependencies
 ```sh
-$ cd 3D-shoe-customizer
+$ cd 3d-monsters-cards
 $ npm install
 ```
 3. To run the development environment
