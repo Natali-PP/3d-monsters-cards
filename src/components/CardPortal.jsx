@@ -1,14 +1,13 @@
 import { useRef, useState, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as easing from "maath/easing";
-import { MeshPortalMaterial, RoundedBox, Sparkles } from "@react-three/drei";
+import { MeshPortalMaterial, RoundedBox } from "@react-three/drei";
 import * as THREE from 'three';
+import usePortalStore from "@/store/usePortalStore";
 
 const CardPortal = ({
   children,
   name,
-  active,
-  setActive,
   ...props
 }) => {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 })
@@ -17,6 +16,11 @@ const CardPortal = ({
   const mouseTolerance = 0.5;
   const centerX = window.innerWidth * 0.5;
   const centerY = window.innerHeight * 0.5;
+
+
+  const [active, setActive] = usePortalStore(
+    (state) => [state.active, state.setActive]
+  )
 
   useEffect(() => {
     const handleWindowMouseMove = event => {
@@ -79,8 +83,6 @@ const CardPortal = ({
           {children}
         </MeshPortalMaterial>
       </RoundedBox>
-
-      <Sparkles count={80} scale={2} speed={0.4} size={5} color={'red'} noise={5} />
     </group>
   )
 }
