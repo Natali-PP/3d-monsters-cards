@@ -3,9 +3,7 @@ import styles from '../../styles/RotationIcon.module.css';
 import { motion } from 'framer-motion';
 import usePortalStore from "@/store/usePortalStore";
 
-
 const RotationIcon = () => {
-
   const active = usePortalStore((state) => (state.active))
   const variants = {
     open: { opacity: 1, y: 0 },
@@ -13,7 +11,6 @@ const RotationIcon = () => {
   }
   return (
     <motion.div
-
       initial={{ opacity: 0, y: '-100%' }}
       animate={active ? "open" : "closed"}
       variants={variants}

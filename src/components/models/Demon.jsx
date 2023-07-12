@@ -10,10 +10,10 @@ export function Demon(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models/Demon.gltf')
   const { actions } = useAnimations(animations, group);
-
   const [hovered, setHovered] = useState(false)
 
   useCursor(hovered);
+
   useEffect(() => {
     actions['Idle'].reset().fadeIn(0.5).play();
     return () => actions['Idle'].fadeOut(0.5)
@@ -21,11 +21,11 @@ export function Demon(props) {
 
   useEffect(() => {
     if (hovered) {
-      console.log('hooover')
       actions['Dance'].reset().fadeIn(0.5).play();
       return () => actions['Dance'].fadeOut(0.5)
     }
   }, [hovered])
+
   return (
     <group ref={group} {...props} dispose={null} onPointerOver={() => setHovered(true)} onPointerLeave={() => setHovered(false)}>
       <group name="Scene">

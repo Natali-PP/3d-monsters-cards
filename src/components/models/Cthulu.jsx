@@ -13,6 +13,7 @@ export function Cthulhu(props) {
   const [hovered, setHovered] = useState(false)
 
   useCursor(hovered);
+
   useEffect(() => {
     actions['Flying'].reset().fadeIn(0.5).play();
     return () => actions['Flying'].fadeOut(0.5)
@@ -24,6 +25,7 @@ export function Cthulhu(props) {
       return () => actions['Bite_Front'].fadeOut(0.5)
     }
   }, [hovered])
+
   return (
     <group ref={group} {...props} dispose={null} onPointerOver={() => setHovered(true)} onPointerLeave={() => setHovered(false)}>
       <group name="Scene">
