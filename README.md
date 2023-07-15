@@ -29,7 +29,8 @@ This application uses a number of open source projects to work properly:
 - [Maath](https://github.com/pmndrs/maath) - :feather: Math helpers for the rest of us 
 
 ## Aditional Tools
-[Blockade Labs](https://www.blockadelabs.com/) - AI-powered tool for generating  360° textures from text prompts. 
+- [Blockade Labs](https://www.blockadelabs.com/) - AI-powered tool for generating  360° textures from text prompts. 
+- [Cute 3D Models](https://quaternius.com/packs/cutemonsters.html) - Cute Animated Monsters Pack by Quaternius - Licence CC
 
 ## Installation
 
